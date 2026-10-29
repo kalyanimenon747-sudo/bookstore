@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PageTurner — Online Bookstore</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="topbar">A LITTLE ESCAPE, DELIVERED TO YOUR DOOR · FREE SHIPPING OVER ₹999</div>
+  <div id="app">
+    <header class="header">
+      <a class="brand" href="#home">Page<span>Turner</span>.</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#shop">Shop books</a><a href="#about">Our story</a>
+      </nav>
+      <button class="cart-btn" id="open-cart">Bag <span class="cart-count" id="cart-count">0</span></button>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <div class="eyebrow">Your next chapter starts here</div>
+          <h1>Find your next<br><em>favourite</em> read.</h1>
+          <p>Stories to get lost in. Ideas to grow with. Discover handpicked reads for curious minds, late-night dreamers, and everyone in between.</p>
+          <button class="primary-btn" id="explore-btn">Explore the shelves →</button>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a stack of books">
+          <div class="sun"></div>
+          <div class="book-stack">
+            <div class="hero-book one">THE ART<br>OF SLOW<br>LIVING</div>
+            <div class="hero-book two">A THOUSAND<br>SMALL<br>WONDERS</div>
+            <div class="hero-book three">GROW<br>THROUGH<br>IT</div>
+          </div>
+          <div class="hero-note">For the love of books ✦</div>
+        </div>
+      </section>
+
+      <section class="section" id="shop">
+        <div class="section-head">
+          <div><div class="eyebrow accent">The reading room</div><h2>Books worth opening.</h2>
+            <p class="section-sub">A small, thoughtful collection for your ever-growing bookshelf.</p></div>
+          <div class="section-sub" id="result-count">8 books to discover</div>
+        </div>
+        <div class="toolbar">
+          <input class="search" id="search" type="search" placeholder="Search by title, author or genre…" aria-label="Search books">
+          <select class="filter" id="sort" aria-label="Sort books">
+            <option value="featured">Featured</option><option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option><option value="az">Title: A–Z</option>
+          </select>
+        </div>
+        <div class="category-row" id="categories">
+          <button class="chip active" data-category="All">All books</button>
+          <button class="chip" data-category="Fiction">Fiction</button>
+          <button class="chip" data-category="Personal Growth">Personal growth</button>
+          <button class="chip" data-category="Mystery">Mystery</button>
+          <button class="chip" data-category="Fantasy">Fantasy</button>
+          <button class="chip" data-category="Non-fiction">Non-fiction</button>
+        </div>
+        <div class="books-grid" id="books-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="banner" id="about">
+        <div><h2>Good books. Better days.</h2><p>Join our reading club for new releases, staff picks, and little literary surprises.</p></div>
+        <button class="primary-btn" id="join-btn">Join the reading club ↗</button>
+      </section>
+    </main>
+    <footer class="footer">
+      <div><a class="brand" href="#home">Page<span>Turner</span>.</a><p>Made for readers, by readers. © 2026 PageTurner Books.</p></div>
+      <div class="footer-links"><a href="#shop">Browse books</a><a href="#about">Our story</a><a href="mailto:hello@pageturner.example">Contact</a></div>
+    </footer>
+  </div>
+
+  <div class="overlay" id="cart-overlay" role="dialog" aria-modal="true" aria-label="Shopping cart">
+    <aside class="drawer">
+      <div class="drawer-head"><h2>Your book bag</h2><button class="close" id="close-cart" aria-label="Close cart">×</button></div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-total"><span>Total</span><span id="cart-total">₹0</span></div>
+      <button class="checkout" id="checkout">Continue to checkout</button>
+    </aside>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
